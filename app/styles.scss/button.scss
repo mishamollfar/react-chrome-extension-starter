@@ -1,0 +1,27 @@
+.button {
+  box-shadow: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 2px;
+  outline: none;
+}
+
+.cancel-btn {
+  @extend .button;
+  margin-left: 5px;
+  padding: 7px 16px 8px;
+  font-size: 12.5px;
+  line-height: 15px;
+  width: 100px;
+}
+
+.save-btn {
+  vertical-align: super;
+  float: right;
+  @extend .cancel-btn;
+  background-color: mediumblue !important;
+  color: blue !important;
+  margin-left: 10px !important;
+  width: 100px !important;
+}

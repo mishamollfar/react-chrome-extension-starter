@@ -1,0 +1,81 @@
+{
+  "name": "name-your-extension-project",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "gulp": "gulp",
+    "webpack": "webpack --mode=production",
+    "build": "npm run webpack -- -p && gulp build",
+    "package": "gulp package",
+    "typings": "typings",
+    "watch": "concurrently --kill-others \"npm run gulp -- watch\" \"npm run webpack -- -w\"",
+    "format": "prettier --config .prettierrc.yaml --write \" src/**/*.{ts,scss,tsx}\"",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{tsx,json,scss,ts}": [
+      "npm run format",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "prettier": "^1.13.4",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-shadow": "^16.3.0",
+    "rxjs": "^6.2.0",
+    "webpack-livereload-plugin": "^2.1.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "browser": true
+    },
+    "globals": {
+      "chrome": true
+    },
+    "rules": {
+      "eol-last": 0,
+      "quotes": [
+        2,
+        "single"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.68",
+    "@types/react": "^16.3.16",
+    "@types/react-dom": "^16.0.6",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-es2015-template-literals": "^6.22.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "concurrently": "^3.5.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-cache": "^1.0.2",
+    "gulp-chrome-manifest": "0.0.13",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-eslint": "^4.0.2",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.5",
+    "gulp-zip": "^4.1.0",
+    "node-sass": "^4.9.0",
+    "run-sequence": "^2.2.1",
+    "ts-loader": "^4.3.1",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.1",
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.2",
+    "wiredep": "^4.0.0"
+  }
+}
